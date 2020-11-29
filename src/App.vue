@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HeaderComponent></HeaderComponent>
+    <SliderComponent></SliderComponent>
+
+    <div class="center">
+
+      <!-- <LastArticlesComponent></LastArticlesComponent> -->
+      <!-- Aqui llamamos al tag router-view para que funcione el router -->
+      <router-view></router-view>
+
+      <SidebarComponent></SidebarComponent>
+        <!-- Limpiar los flotados para que no se pasen los siguientes elementos -->
+        <div class="clearfix"></div>
+    </div>
+
+     <FooterComponent></FooterComponent>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderComponent from './components/HeaderComponent.vue';
+import SliderComponent from './components/SliderComponent.vue';
+import SidebarComponent from './components/SidebarComponent.vue';
+import FooterComponent from './components/FooterComponent.vue';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderComponent,
+    SliderComponent,
+    SidebarComponent,
+    FooterComponent
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import './assets/css/styles.css';
 </style>
